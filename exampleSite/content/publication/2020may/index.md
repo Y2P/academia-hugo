@@ -17,6 +17,8 @@ publication_types: ["1"]
 
 abstract: "Another facet of the elegant link between random processes on graphs and Laplacian-based numerical linear algebra is uncovered: based on random spanning forests, novel Monte-Carlo estimators for graph signal smoothing are proposed. These random forests are sampled efficiently via a variant of Wilson's algorithm --in time linear in the number of edges. The theoretical variance of the proposed estimators are analyzed, and their application to several problems are considered, such as Tikhonov denoising of graph signals or semi-supervised learning for node classification on graphs."
 
+publication: 45th International Conference on Acoustics, Speech, and Signal Processing
+
 featured: true
 
 links:
@@ -26,7 +28,7 @@ url:
 url_pdf: ./articles/smoothingRSF.pdf
 url_code: ./codes/smoothingRSF.zip
 # url_dataset: '#'
-# url_poster: '#'
+url_poster: './files/slides/icassp20_slides.pdf'
 # url_project: ''
 # url_slides: ''
 # url_source: '#'

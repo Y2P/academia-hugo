@@ -67,6 +67,9 @@
 - id: btn_download
   translation: Download
 
+- id: btn_event
+  translation: Event
+
 # About widget
 
 - id: interests

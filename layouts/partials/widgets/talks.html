@@ -1,0 +1,73 @@
+{{ $ := .root }}
+{{ $page := .page }}
+
+<!-- Talks widget -->
+<div class="row">
+  <div class="col-12 col-lg-5 section-heading">
+    <h1>{{ with $page.Title }}{{ . | markdownify }}{{ end }}</h1>
+    {{ with $page.Params.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
+  </div>
+  <div class="col-12 col-lg-7">
+    {{ with $page.Content }}{{ . }}{{ end }}
+
+    {{ if $page.Params.talk }}
+    {{ $exp_len := len $page.Params.talk }}
+    {{ range $idx, $key := sort $page.Params.talk ".date_start" "desc" }}
+    <div class="row talk">
+      <!-- Timeline -->
+      <!-- <div class="col-auto text-center flex-column d-none d-sm-flex">
+        <div class="row h-50">
+          <div class="col {{if gt $idx 0}}border-right{{end}}">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+        <div class="m-2">
+          <span class="badge badge-pill border {{if not .date_end}}exp-fill{{end}}">&nbsp;</span>
+        </div>
+        <div class="row h-50">
+          <div class="col {{if lt $idx (sub $exp_len 1)}}border-right{{end}}">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+      </div> -->
+      <!-- Content -->
+      <div class="col py-2">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title exp-title text-muted mt-0 mb-1"><a href={{.url}}>{{.title | markdownify | emojify}}</a></h4>
+            <div class="text-muted exp-meta">
+              {{.location}}	&#183 {{ (time .date_start).Format ($page.Params.date_format | default "January 2006") }}
+              {{ if .date_end}}
+                – {{ (time .date_end).Format ($page.Params.date_format | default "January 2006") }}
+              {{end}}
+            </div>
+            {{with .description}}<div class="card-text" style="font-size:16px;">{{. | markdownify | emojify}}</div>{{end}}
+            <!-- Links -->
+            <!-- <div class="btn-links">
+              {{ with .url }}
+              <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="{{ . }}" target="_blank" rel="noopener">
+                {{ i18n "btn_event" }}
+              </a>
+              {{ end }}
+              {{ with .url_pdf }}
+              <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="{{ . }}" target="_blank" rel="noopener">
+                {{ i18n "btn_pdf" }}
+              </a>
+              {{ end }}
+              {{ with .url_poster }}
+              <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="{{ . }}" target="_blank" rel="noopener">
+                {{ i18n "btn_poster" }}
+              </a>
+              {{end}}
+              {{ with .url_slides }}
+              <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="{{ . }}" target="_blank" rel="noopener">
+                {{ i18n "btn_slides" }}
+              </a>
+              {{end}}
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    {{end}}
+    {{end}}
+  </div>
+</div>

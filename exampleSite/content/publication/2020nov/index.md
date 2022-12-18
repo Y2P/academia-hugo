@@ -5,7 +5,7 @@ authors:
 - Pierre-Olivier Amblard
 - Simon Barthelme
 - Nicolas Tremblay
-date: "2020-11-01T00:00:00Z"
+date: "2021-05-28T00:00:00Z"
 doi: "10.1109/TSIPN.2021.3084879"
 
 
@@ -16,6 +16,8 @@ doi: "10.1109/TSIPN.2021.3084879"
 publication_types: ["2"]
 
 abstract: "Novel Monte Carlo estimators are proposed to solve both the Tikhonov regularization (TR) and the interpolation problems on graphs. These estimators are based on random spanning forests (RSF), the theoretical properties of which enable to analyze the estimators' theoretical mean and variance. We also show how to perform hyperparameter tuning for these RSF-based estimators. TR is a component in many well-known algorithms, and we show how the proposed estimators can be easily adapted to avoid expensive intermediate steps in generalized semi-supervised learning, label propagation, Newton's method and iteratively reweighted least squares. In the experiments, we illustrate the proposed methods on several problems and provide observations on their run time."
+
+publication: IEEE Transactions on Signal and Information Processing over Networks
 
 featured: true
 
